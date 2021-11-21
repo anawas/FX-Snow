@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -23,7 +24,8 @@ public class App extends Application {
     private final int NUMOFFLAKES = 2000;
 
     private List<Snowflake> flakes = new ArrayList<>();
-    
+    private Image background;
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -49,7 +51,8 @@ public class App extends Application {
         var canvas = new Canvas(SCREENWIDTH, SCREENHEIGHT);
         g = canvas.getGraphicsContext2D();
 
-
+        // image source: https://img.fotocommunity.com/letztes-winterbild-ac8765c4-fe9e-44bd-8975-cfa3c156448f.jpg?height=1080
+        background = new Image(App.class.getClassLoader().getResourceAsStream("snow/background.jpg"));
         AnimationTimer timer = new AnimationTimer() {
             public void handle(long now) {
                 onUpdate();
@@ -63,6 +66,8 @@ public class App extends Application {
 
     protected void onUpdate() {
         g.clearRect(0, 0, SCREENWIDTH, SCREENHEIGHT);
+        g.drawImage(background, 0, 0);
+
         flakes.forEach(f -> {
             f.update();
             g.setFill(f.color);

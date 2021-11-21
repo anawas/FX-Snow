@@ -16,7 +16,7 @@ public class Snowflake {
         this.speed = 0.1 + Math.random()*0.1;
         this.size = Math.random() * 5.0;
         this.counter = Math.random() * 10;
-        this.color = Color.gray(Math.random());
+        this.color = Color.gray(0.75 + Math.random()*0.25);
     }
 
     public void update() {
