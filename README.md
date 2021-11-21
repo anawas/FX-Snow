@@ -1,7 +1,7 @@
 # Snow
 
 ## Zweck
-Zeigt, wie man es mit einem Partikelsystem in JavaFX scheinen lassen kann. 
+Zeigt, wie man es mit einem Partikelsystem in JavaFX schneien lassen kann. 
 
 ## Anwendung
 Nach dem Starten der App öffnet sich ein Fenster in dem Schneeflocken fallen. Grösse, Farbe und Geschwindigkeit der Flocken lassen sich in der Klasse Snowflake anpassen.
